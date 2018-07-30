@@ -22,6 +22,9 @@ class Account:
 
 
 class Checking(Account):
+	
+	type = "checking"
+	
 
     def __init__(self, filepath, fee):
         Account.__init__(self, filepath)
@@ -36,8 +39,14 @@ class Checking(Account):
 # add dirs and files for another account
 
 
-checking = Checking("balance.txt", 1)
+jack_checking = Checking("jack.txt", 1)
 print(checking.balance)
-checking.transfer(int(input('How much?   ')))
-checking.commit()
+jack_checking.transfer(int(input('How much?   ')))
+jack_checking.commit()
+print(jack_checking.balance)
+
+john_checking = Checking("john.txt", 1)
 print(checking.balance)
+john_checking.transfer(int(input('How much?   ')))
+john_checking.commit()
+print(john_checking.balance)
